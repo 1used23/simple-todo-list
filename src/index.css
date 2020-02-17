@@ -18,3 +18,8 @@ code {
   justify-content: center;
   align-items: center;
 }
+
+.title {
+  font-size: 35px;
+  padding-bottom: 15px;
+}
