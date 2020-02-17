@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, TextField } from "@material-ui/core";
-
+import { CSSTransitionGroup } from "react-transition-group";
 import "./App.css";
 
 function App() {
@@ -38,10 +38,17 @@ function App() {
           ADD
         </Button>
       </div>
+
       <div className="main-list">
-        {tasksState.map(task => {
-          return <ul>{task.task}</ul>;
-        })}
+        <CSSTransitionGroup
+          transitionName="example"
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={300}
+        >
+          {tasksState.map(task => {
+            return <ul key={task.task}>{task.task}</ul>;
+          })}
+        </CSSTransitionGroup>
       </div>
     </div>
   );
