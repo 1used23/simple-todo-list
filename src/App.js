@@ -6,7 +6,6 @@ import {
   ListItem,
   ListItemText,
   IconButton,
-  ListItemSecondaryAction,
   Container
 } from "@material-ui/core";
 import { CSSTransitionGroup } from "react-transition-group";
@@ -22,15 +21,17 @@ function App() {
 
   const handleAddButton = () => {
     if (textFieldState) {
-      const id = tasksState.length;
-      setTasksState([...tasksState, { id: id, task: textFieldState }]);
+      setTasksState([...tasksState, { task: textFieldState }]);
       document.querySelector("#textfield").value = "";
     }
   };
 
   const handleDeleteButton = e => {
     const id = e.target.dataset.id;
-    const newTasksArr = tasksState.filter(task => task.id.toString() !== id);
+    const text = e.target.dataset.task;
+    console.log(id, text);
+
+    const newTasksArr = tasksState.filter(task => task.task !== text);
     setTasksState(newTasksArr);
   };
 
@@ -68,7 +69,7 @@ function App() {
                   <IconButton
                     edge="end"
                     aria-label="delete"
-                    data-id={task.id}
+                    data-task={task.task}
                     onClick={handleDeleteButton}
                   >
                     <DeleteIcon />
