@@ -28,10 +28,7 @@ function App() {
   };
 
   const handleDeleteButton = e => {
-    const id = e.target.dataset.id;
-    const text = e.target.dataset.task;
-    console.log(id, text);
-
+    const text = e.currentTarget.dataset.task;
     const newTasksArr = tasksState.filter(task => task.task !== text);
     setTasksState(newTasksArr);
   };
@@ -65,8 +62,8 @@ function App() {
           >
             {tasksState.map(task => {
               return (
-                <Paper>
-                  <ListItem key={task.task} divider>
+                <Paper key={task.task}>
+                  <ListItem divider>
                     <ListItemText primary={task.task} />
                     <IconButton
                       edge="end"
