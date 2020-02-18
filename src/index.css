@@ -19,11 +19,6 @@ code {
   align-items: center;
 }
 
-.title {
-  font-size: 35px;
-  padding-bottom: 15px;
-}
-
 .example-enter {
   opacity: 0.01;
 }
