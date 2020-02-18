@@ -6,7 +6,8 @@ import {
   ListItem,
   ListItemText,
   IconButton,
-  Container
+  Container,
+  Paper
 } from "@material-ui/core";
 import { CSSTransitionGroup } from "react-transition-group";
 import Typography from "@material-ui/core/Typography";
@@ -64,17 +65,19 @@ function App() {
           >
             {tasksState.map(task => {
               return (
-                <ListItem key={task.task} divider>
-                  <ListItemText primary={task.task} />
-                  <IconButton
-                    edge="end"
-                    aria-label="delete"
-                    data-task={task.task}
-                    onClick={handleDeleteButton}
-                  >
-                    <DeleteIcon />
-                  </IconButton>
-                </ListItem>
+                <Paper>
+                  <ListItem key={task.task} divider>
+                    <ListItemText primary={task.task} />
+                    <IconButton
+                      edge="end"
+                      aria-label="delete"
+                      data-task={task.task}
+                      onClick={handleDeleteButton}
+                    >
+                      <DeleteIcon />
+                    </IconButton>
+                  </ListItem>
+                </Paper>
               );
             })}
           </CSSTransitionGroup>
