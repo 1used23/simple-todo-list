@@ -17,20 +17,21 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import "./App.css";
 
 function App() {
-  const [tasksState, setState] = useState([]);
+  const [tasksState, setTasksState] = useState([]);
   const [textFieldState, setTextFieldState] = useState(0);
 
   const handleAddButton = () => {
     if (textFieldState) {
       const id = tasksState.length;
-      setState([...tasksState, { id: id, task: textFieldState }]);
+      setTasksState([...tasksState, { id: id, task: textFieldState }]);
       document.querySelector("#textfield").value = "";
     }
   };
 
   const handleDeleteButton = e => {
     const id = e.target.dataset.id;
-    console.log(id);
+    const newTasksArr = tasksState.filter(task => task.id.toString() !== id);
+    setTasksState(newTasksArr);
   };
 
   const handleInput = e => {
