@@ -1,10 +1,10 @@
-## Simple ToDo List!
+# Simple ToDo List!
 
-## Used:
-React Create App
-React Hooks
-React Transition Group
-Material UI
+## Used
+### `React Create App`
+### `React Hooks`
+### `React Transition Group`
+### `Material UI`
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
