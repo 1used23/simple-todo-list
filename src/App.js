@@ -64,7 +64,7 @@ function App() {
           >
             {tasksState.map(task => {
               return (
-                <ListItem key={task.task}>
+                <ListItem key={task.task} divider>
                   <ListItemText primary={task.task} />
                   <IconButton
                     edge="end"
