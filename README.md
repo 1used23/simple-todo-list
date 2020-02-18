@@ -1,6 +1,6 @@
 ## Simple ToDo List!
 
-## Used:
+# Used:
 React Create App
 React Hooks
 React Transition Group
