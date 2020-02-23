@@ -18,12 +18,12 @@ import "./App.css";
 
 function App() {
   const [tasksState, setTasksState] = useState([]);
-  const [textFieldState, setTextFieldState] = useState(0);
+  const [textFieldState, setTextFieldState] = useState("");
 
   const handleAddButton = () => {
     if (textFieldState) {
       setTasksState([...tasksState, { task: textFieldState }]);
-      document.querySelector("#textfield").value = "";
+      setTextFieldState("");
     }
   };
 
@@ -48,6 +48,7 @@ function App() {
             label="Put some text in here!"
             multiline
             onChange={handleInput}
+            value={textFieldState}
           />
           <Button variant="contained" color="primary" onClick={handleAddButton}>
             ADD
