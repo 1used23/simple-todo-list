@@ -58,7 +58,7 @@ function App() {
         <List>
           <CSSTransitionGroup
             transitionName="example"
-            transitionEnterTimeout={500}
+            transitionEnterTimeout={300}
             transitionLeaveTimeout={300}
           >
             {tasksState.map(task => {
