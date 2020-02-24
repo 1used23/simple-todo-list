@@ -21,7 +21,7 @@ function App() {
   const [textFieldState, setTextFieldState] = useState("");
 
   const handleAddButton = () => {
-    if (textFieldState) {
+    if (textFieldState.trim()) {
       setTasksState([...tasksState, { task: textFieldState }]);
       setTextFieldState("");
     }
@@ -58,8 +58,8 @@ function App() {
         <List>
           <CSSTransitionGroup
             transitionName="example"
-            transitionEnterTimeout={300}
-            transitionLeaveTimeout={300}
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={500}
           >
             {tasksState.map(task => {
               return (
